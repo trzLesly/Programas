@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+    <link rel="stylesheet" href="/CSS/estilos.css"> 
+    <link rel="shortcut icon" href="/IMAGENES/EN.png" type="image/x-icon">
+    <style>
+        html { background-image: url(/IMAGENES/e5.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <img src="../IMAGENES/bCarnival.jpg" width="1365" height="190">
+    <div class="cont-menu-seg active" id="menu">
+        <ul>
+            <li><a href="/Estructura de datos.html"><font color="White"> Inicio </font></a></li><br>
+        </ul>
+    </div>
+        <div class="contenedor1">
+            <h1><font size="60">Listas</font></h1>
+        </div>
+        <div class="contenedor2">
+            <h1><font size="60">Listas</font></h1>
+        </div>
+
+    <div class="contenido14">
+        <p></p><br>
+        <p><font color="White" face="Comic" size="4">
+            En este espacio podrás encontrar el código de "LISTAS":
+        </font>
+        </p><br><br>
+        <textarea class="contenedor3" cols="100" rows="38" color="white">
+        
+            #include <stdio.h>
+                #include <stdlib.h>
+                #include <conio.h>
+                
+                struct Nodo{
+                    int num;
+                    Nodo *siguiente;
+                };
+                
+                void agreg(Nodo *&,int);
+                void impr(Nodo *);
+                void detMayMen(Nodo *);
+                
+                int main(){
+                    Nodo *lista=NULL;
+                    int num;
+                    char r;
+                    do{
+                        printf("\n\t Este programa ejecuta una 'lista' para el uso del cliente.");
+                        printf("\n\t Ingresa un numero: ");
+                        scanf("\n\t %d", &num);
+                        agreg(lista,num);
+                        printf("\n\t Quieres integrar otro numero a la lista si o no? (s/n): ");
+                        scanf("%s", &r);
+                    }while(r=='S' || r=='s');
+                    printf("\n\t Lista: ");
+                    impr(lista);
+                    detMayMen(lista);
+                }
+                
+                //agregar elementos al final de la lista
+                void agreg(Nodo *&lista,int n){
+                    Nodo *nuevo_nodo = new Nodo();
+                    Nodo *aux;
+                    nuevo_nodo->num = n;
+                    nuevo_nodo->siguiente = NULL;
+                    
+                    if(lista == NULL){  		//determina el estado de la lista
+                        lista = nuevo_nodo; 	//integra un elemento
+                    }
+                    else{
+                        aux = lista;  						//el auxiliar esta al inicio de la lista 
+                        while(aux->siguiente != NULL){ 		//recorre la lista
+                            aux = aux->siguiente; 			//avanza posiciones en la lista
+                        }
+                        aux->siguiente = nuevo_nodo; 		//se agrega un nodo a la lista
+                    }
+                    printf("\n\t Se agrego correctamente el numero %d a la lista \n", n);
+                }
+                
+                                            //Imprime los elementos de la lista
+                void impr(Nodo *lista){
+                    while(lista != NULL){
+                        printf("%d -> ", lista->num);
+                        lista = lista->siguiente; 
+                    }
+                }
+                
+                                                //Se determina el mayor o menor
+                void detMayMen(Nodo *lista){
+                    int may =0, men=99999;
+                    while(lista != NULL){
+                        if((lista->num)>may){		 
+                            may =  lista->num;
+                        }
+                        if((lista->num)<men){ 		
+                            men =  lista->num;
+                        }
+                        lista = lista->siguiente; 
+                    }
+                    
+                    printf("\n\t El numero menor es: %d", men);
+                    printf("\n\t El numero mayor es: %d", may);
+                }
+                
+        </textarea>
+    </font>
+        <br><br><button class="button"><a href="/HTML/subPagListas.html">Ver ejecución </a></button>
+    </div>
+</body>
+<div class="footer">
+    <footer>
+        <br><p align="center"><font color="white" size="4">
+            Lesly Terrazas · Técnico en Infórmatica. <br>
+        </font></p>
+    </footer>
+    </div>
+</html>

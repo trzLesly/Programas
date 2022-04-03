@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colas</title>
+    <link rel="stylesheet" href="/CSS/estilos.css"> 
+    <link rel="shortcut icon" href="/IMAGENES/EN.png" type="image/x-icon">
+    <style>
+        html { background-image: url(/IMAGENES/e5.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <img src="../IMAGENES/bCarnival.jpg" width="1365" height="190">
+    <div class="cont-menu-seg active" id="menu">
+        <ul>
+            <li><a href="/Estructura de datos.html"><font color="White"> Inicio </font></a></li><br>
+        </ul>
+    </div>
+        <div class="contenedor1">
+            <h1><font size="60">Colas</font></h1>
+        </div>
+        <div class="contenedor2">
+            <h1><font size="60">Colas</font></h1>
+        </div>
+
+    <div class="contenido14">
+        <p></p><br>
+        <p><font color="White" face="Comic" size="4">
+            En este espacio podrás encontrar el código de "COLAS":
+        </font>
+        </p><br><br>
+        <textarea class="contenedor3" cols="100" rows="38" color="white">
+        
+            package Micrositio.Cola;
+
+            import java.util.LinkedList; // librería para agregar cualquier tipo de dato en colas.
+            import java.util.Queue; // librería tradicional que se usa en colas.
+            
+            public class cola {
+                
+                public static void main(String[] args) {
+                    // Creamos la cola indicando el tipo de dato.
+                    Queue<Integer> cola = new LinkedList<Integer>();
+            
+                    // Se agregarán datos con las expresiones offer y add
+                    cola.offer(1);
+                    cola.add(2);
+                    cola.offer(3);
+                    cola.add(12);
+            
+                    System.out.println("Cola llena: " +cola);
+            
+                    // Modo para eliminar los elementos de la cola hasta dejarla vacía.
+                    //while(cola.poll()!=null) {
+                      //  System.out.println(cola.peek());
+                    //}
+            
+                    // Modo tradicional para eliminar un elemento de la cola.
+                    cola.remove();
+                    System.out.println(cola);
+                    cola.poll();
+                    System.out.println(cola);
+            
+                    // Consulta el orden de la cola, mostrando cual es el orden en el que se guardan.
+                    int y = cola.peek();
+                    System.out.println("Último elemento: "+y);
+            
+                    // Nos regresa falso si la cola tiene elementos, y verdadero si no tiene elementos.
+                    System.out.println(cola.isEmpty());
+                }
+            }
+            
+        </textarea>
+    </font>
+        <br><br><button class="button"><a href="/HTML/subPagColas.html">Ver ejecución </a></button>
+    </div>
+</body>
+<div class="footer">
+    <footer>
+        <br><p align="center"><font color="white" size="4">
+            Lesly Terrazas · Técnico en Infórmatica. <br>
+        </font></p>
+    </footer>
+    </div>
+</html>

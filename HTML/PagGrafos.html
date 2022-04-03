@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafos</title>
+    <link rel="stylesheet" href="/CSS/estilos.css"> 
+    <link rel="shortcut icon" href="/IMAGENES/EN.png" type="image/x-icon">
+    <style>
+        html { background-image: url(/IMAGENES/e5.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <img src="../IMAGENES/bCarnival.jpg" width="1365" height="190">
+    <div class="cont-menu-seg active" id="menu">
+        <ul>
+            <li><a href="/Estructura de datos.html"><font color="White"> Inicio </font></a></li><br>
+        </ul>
+    </div>
+        <div class="contenedor1">
+            <h1><font size="60">Grafos</font></h1>
+        </div>
+        <div class="contenedor2">
+            <h1><font size="60">Grafos</font></h1>
+        </div>
+
+    <div class="contenido14">
+        <p></p><br>
+        <p><font color="White" face="Comic" size="4">
+            En este espacio podrás encontrar el código de "GRAFOS":
+        </font>
+        </p><br><br>
+        <textarea class="contenedor3" cols="100" rows="38" color="white">
+        
+        ------ CLASE ENHYPEN ------
+
+        package enhypen;
+        /**
+        * @author abiga
+        */
+        public class Enhypen {
+
+            public static void main(String[] args) {
+            
+            int n = 999999999;
+                
+                System.out.println("------- Edades y nombres de ENHYPEN -------");
+                System.out.println("Lee Hee Seung, 20 años" + " -> " + "1");
+                System.out.println("Park Sung Hoon, 19 años" + " -> " + "2");
+                System.out.println("Kim Sun Woo, 18 años" + " -> " + "3");
+                System.out.println("Yang Jung Won, 17 años" + " -> " + "4");
+                System.out.println("Nishimura Riki, 16 años" + " -> " + "5");
+                System.out.println("------- Fin de los integrantes -------\n");
+                
+                long matrizE[][]={
+                    
+                    { 0, 1, n, n, n},
+                    { 1, 0, 1, n, 1},
+                    { n, 1, 0, 1, 1},
+                    { n, n, 1, 0, n},
+                    { n, 1, 1, n, 0},
+                };
+            
+                Edades ruta = new Edades();
+                System.out.println(ruta.needE(matrizE));
+            }
+
+        }
+
+        ------ CLASE EDADES ------
+
+        package enhypen;
+        /*
+        * @author abiga
+        */
+
+        public class Edades{
+            
+            public String needE(long[][] ad){
+                int vce = ad.length;
+                long mYcia[][] = ad;
+                String camUno[][] = new String[vce][vce];
+                String camDos[][] = new String[vce][vce];
+                String camReal = "", cad = "", cCorto = "";
+                int i, j, k;
+                float temp1, temp2, temp3, temp4, mno;
+
+                //inicializmos las matrices de caminos y caminos auxiliares
+                for (i = 0; i < vce; i++) {
+                    for (j = 0; j < vce; j++) {
+                        camUno[i][j] = "";
+                        camDos[i][j] = "";
+                    }
+                }
+                for (k = 0; k < vce; k++) {
+                    for (i = 0; i < vce; i++) {
+                        for (j = 0; j < vce; j++) {
+                            temp1 = mYcia[i][j];
+                            temp2 = mYcia[i][k];
+                            temp3 = mYcia[k][j];
+                            temp4 = temp2 + temp3;
+
+                            //Encontar el minimo
+                            mno = Math.min(temp1, temp4);
+                            if (temp1 != temp4) {
+                                if (mno == temp4) {
+                                    camReal = "";
+                                    camDos[i][j] = k + "";
+                                    camUno[i][j] = camR1(i, k, camDos, camReal) + (k + 1);
+                                }
+                            }
+                            mYcia[i][j] = (long) mno;
+                        }
+                    }
+                }
+                //Agrega el camino minimo a la cadena
+                for (i = 0; i < vce; i++) {
+                    for (j = 0; j < vce; j++) {
+                        cad = cad + "[ " + mYcia[i][j] + " ]";
+                    }
+                    cad = cad + "\n";
+                }
+                ////////////////////////////////////
+                for (i = 0; i < vce; i++) {
+                    for (j = 0; j < vce; j++) {
+                        if (mYcia[i][j] != 1000000000) {
+                            if (i != j) {
+                                if (camUno[i][j].equals("")) {
+                                    cCorto = cCorto + "De (" + (i + 1) + "--->" + (j + 1) + ") irse por... (" + (i + 1) + ", " + (j + 1) + ")\n";
+                                } else {
+                                    cCorto = cCorto + "De (" + (i + 1) + "--->" + (j + 1) + ") Irse por...(" + (i + 1) + ", " + camUno[i][j] + ", " + (j + 1) + ")\n";
+                                }
+                            }
+                        }
+                    }
+                }
+                return "La matriz de caminos más cortos entre los diferentes vertices es: \n" + cad + "\nLos diferentes caminos más cortos entres vertices son: \n" + cCorto;
+            }
+
+            public String camR1(int i, int k, String[][] camDos, String camReal) {
+                if (camDos[i][k].equals("")) {
+                    return "";
+                } else {
+                    //Recursividad al millón
+                    camReal += camR1(i, Integer.parseInt(camDos[i][k].toString()), camDos, camReal) + (Integer.parseInt(camDos[i][k].toString()) + 1) + ", ";
+                    return camReal;
+                }
+            }
+        }
+        </textarea>
+    </font>
+        <br><br><button class="button"><a href="/HTML/subPagGrafos.html">Ver ejecución </a></button>
+    </div>
+</body>
+<div class="footer">
+    <footer>
+        <br><p align="center"><font color="white" size="4">
+            Lesly Terrazas · Técnico en Infórmatica. <br>
+        </font></p>
+    </footer>
+    </div>
+</html>

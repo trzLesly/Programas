@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilas</title>
+    <link rel="stylesheet" href="/CSS/estilos.css"> 
+    <link rel="shortcut icon" href="/IMAGENES/EN.png" type="image/x-icon">
+    <style>
+        html { background-image: url(/IMAGENES/e5.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <img src="../IMAGENES/bCarnival.jpg" width="1365" height="190">
+    <div class="cont-menu-seg active" id="menu">
+        <ul>
+            <li><a href="/Estructura de datos.html"><font color="White"> Inicio </font></a></li><br>
+        </ul>
+    </div>
+        <div class="contenedor1">
+            <h1><font size="60">Pilas</font></h1>
+        </div>
+        <div class="contenedor2">
+            <h1><font size="60">Pilas</font></h1>
+        </div>
+
+    <div class="contenido14">
+        <p></p><br>
+        <p><font color="White" face="Comic" size="4">
+            En este espacio podrás encontrar el código de "PILAS":
+        </font>
+        </p><br><br>
+        <textarea class="contenedor3" cols="100" rows="38" color="white">
+        
+        package Micrositio.Pilas;
+
+        import java.util.Stack;
+
+            public class pila{
+
+                public static void main(String[] args){
+
+                    //se crea y se instancia la pila
+                    Stack<Integer> pila = new Stack<Integer>();
+                    //para agregar elementos se usa push
+                        pila.push(10); // 0
+                        pila.push(13); // 1
+                        pila.push(7); // 2
+                    System.out.println(pila); //[10, 13, 7]
+                    
+                        //para eliminar elementos se usa pop
+                        pila.pop(); // se eliminará el último dato almacenado, que sería el 7
+                    System.out.println(pila); // [10, 13]
+                    
+                        //para conocer si hay elementos o no en dicha pila.
+                        boolean x = pila.empty(); //devuelve cierto si la pila esta vacía.
+                    System.out.println("¿La pila esta vacía?: " +x); // False
+                
+                        // para buscar un valor en especifico y te dice donde se encuentra.
+                        int y = pila.search(13); // nos regresará el lugar donde fue almacenado el
+                        número ingresado.
+                    System.out.println("Lugar del número 13:  " +y); // 1
+                
+                        // para obtener el elemento en la cima de la pila.
+                        int z = pila.peek(); // 13
+                    System.out.println("Último elemento:  " +z); // 13
+                }
+                
+            }
+        </textarea>
+    </font>
+        <br><br><button class="button"><a href="/HTML/subPagPilas.html">Ver ejecución </a></button>
+    </div>
+</body>
+<div class="footer">
+    <footer>
+        <br><p align="center"><font color="white" size="4">
+            Lesly Terrazas · Técnico en Infórmatica. <br>
+        </font></p>
+    </footer>
+    </div>
+</html>

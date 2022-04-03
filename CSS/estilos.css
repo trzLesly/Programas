@@ -1,0 +1,284 @@
+
+body{
+        background-color: rgb(0, 0, 0, 0.6);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos para el contenedor del Menu */
+.cont-menu{
+    background-color: rgb(102, 43, 43);
+    width: 210px;
+    height: 60vh;    
+    position: 0px;
+    top: 0;
+    left: 0;
+}
+
+.cont-menu ul{
+    padding: 20px 0px 20px 0px;
+    list-style: none;
+}
+
+
+.cont-menu ul li{
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+ 
+ 
+.cont-menu ul li:hover{
+    background-color: black;
+}
+
+.cont-menu-seg{
+    background-color: rgb(102, 43, 43);
+    width: 210px;
+    height: 12vh;    
+    position: 0px;
+    top: 0;
+    left: 0;
+}
+
+.cont-menu-seg ul{
+    padding: 20px 0px 20px 0px;
+    list-style: none;
+}
+
+
+.cont-menu-seg ul li{
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+ 
+ 
+.cont-menu-seg ul li:hover{
+    background-color: black;
+}
+
+/* Estilos Contenedor 1*/
+.contenedor1{
+    position: absolute;
+    top: 40px;
+    left: 70px;
+    width: 200px;
+    height: 0px;
+    color: rgb(216, 71, 71);
+}
+
+/* Estilos Contenedor 2*/
+.contenedor2{
+    position: absolute;
+    top: 42px;
+    left: 72px;
+    width: 200px;
+    height: 0px;
+    color: white;   
+}
+
+
+.contenedor3 {
+    background-color: rgb(0, 0, 0, 0.6);
+    color: white;
+}
+
+.contenedor4{
+    position: absolute;
+    top: 430px;
+    left: 1035px;
+}
+
+.contenedor5{
+    text-align: left;
+    position: absolute;
+    top: 210px;
+    left: 230px;
+    width: 780px;
+    height: 350px;
+    background: rgb(102, 43, 43, 0.5);
+}
+
+.contenedor51{
+    text-align: left;
+    position: absolute;
+    top: 170px;
+    left: 60px;
+    width: 780px;
+}
+
+/* Estilo Pagina1 (Pilas)*/
+
+.contenido14 {
+    margin: 4% auto;
+    text-align: center;
+    width: 850px;
+    height: 740px;
+    background: rgb(102, 43, 43, 0.6);
+}
+
+.contenido142 {
+    margin: 4% auto;
+    text-align: center;
+    width: 850px;
+    height: 600px;
+    background: rgb(102, 43, 43, 0.6);
+}
+
+/* Estilo Pagina2 (Depresion)*/
+
+.titulo2 {
+    margin: 2% auto;
+    text-align: center;    
+    width: 600px;
+    height: 40px;
+    background: #f8f082;
+}
+
+.contenido21 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+
+.contenido22 {
+    position: absolute;
+    top: 130px;
+    left: 1035px;
+}
+
+.contenido23 {
+    position: absolute;
+    top: 360px;
+    left: 1035px;
+}
+
+.contenido24 {
+    margin: 2% auto;
+    text-align: left;
+    width: 640px;
+    height: 560px;
+    background: paleturquoise;
+}
+
+
+/* Estilo Pagina3 (Estres)*/
+
+.titulo3 {
+    margin: 20px;  
+    width: 90px;
+    height: 50px;
+    background: #f8f082;
+}
+
+.contenido31 {
+    position: absolute;
+    top: 60px;
+    left: 1035px;
+}
+
+.contenido32{
+    position: absolute;
+    top: 275px;
+    left: 1035px;
+}
+
+.contenido33 {
+    margin: 2% ;
+    text-align: left;
+    width: 985px;
+    height: 560px;
+    background: paleturquoise;
+}
+
+/* Estilo Pagina4 (Conducta Agresiva)*/
+
+.titulo4 {
+    position: absolute;
+    top: 30px;
+    left: 30px;    
+    width: 320px;
+    height: 115px;
+    background: #f8f082;
+}
+
+.contenido41 {
+    position: absolute;
+    top: 550px;
+    left: 530px;
+}
+
+.contenido42{
+    text-align: left;
+    position: absolute;
+    top: 165px;
+    left: 30px;
+    width: 390px;
+    height: 575px;
+    background: paleturquoise;
+}
+
+.contenido43 {
+    text-align: left;
+    position: absolute;
+    top: 30px;
+    left: 460px;
+    width: 850px;
+    height: 515px;
+    background: paleturquoise;
+}
+
+.contenido44 {
+    position: absolute;
+    top: 550px;
+    left: 905px;
+}
+
+/* Estilo boton */
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 15px;
+  }
+  
+  .button:hover {background-color: rgb(139, 139, 139)}
+  
+  .button:active {
+    background-color: rgb(139, 139, 139);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+/* Estilo del pie de página */
+.footer {
+    margin:0auto;
+    height:60px;       
+    border-top:4px solid teal;
+    background-color: rgb(0, 0, 0, 0.8);}
+
+/* Estilo para los vídeos */
+.video {
+    top: 100px;
+    width: 800px;
+    height: 450px;
+}

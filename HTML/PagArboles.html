@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arboles</title>
+    <link rel="stylesheet" href="/CSS/estilos.css"> 
+    <link rel="shortcut icon" href="/IMAGENES/EN.png" type="image/x-icon">
+    <style>
+        html { background-image: url(/IMAGENES/e5.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+<body>
+    <img src="../IMAGENES/bCarnival.jpg" width="1365" height="190">
+    <div class="cont-menu-seg active" id="menu">
+        <ul>
+            <li><a href="/Estructura de datos.html"><font color="White"> Inicio </font></a></li><br>
+        </ul>
+    </div>
+        <div class="contenedor1">
+            <h1><font size="60">Arboles</font></h1>
+        </div>
+        <div class="contenedor2">
+            <h1><font size="60">Arboles</font></h1>
+        </div>
+
+    <div class="contenido14">
+        <p></p><br>
+        <p><font color="White" face="Comic" size="4">
+            En este espacio podrás encontrar el código de "ARBOLES":
+        </font>
+        </p><br><br>
+        <textarea class="contenedor3" cols="100" rows="38" color="white">
+        
+            #include<iostream>
+                #include<conio.h>
+                #include<stdlib.h>
+                using namespace std;
+                
+                struct Nodo{
+                    int dato;
+                    Nodo *right;
+                    Nodo *left;
+                };
+                
+                void menu();
+                Nodo *crearNodo(int);
+                void nuNodo(Nodo *&arbol, int);
+                void arbolI(Nodo *,int);
+                
+                Nodo * arbol = NULL;
+                
+                int main (){
+                    menu();
+                    
+                    getch();
+                    return 0;
+                }
+                
+                            //Men�
+                void menu(){
+                    int dato, op, contador=0;
+                    
+                    cout<<"\t Menu"<<endl;
+                        cout <<"\n\t 1) Agregar un nuevo nodo"<<endl;
+                        cout <<"\n\t 2) Ense�ar el arbol. "<<endl;
+                        cout <<"\n\t 3) exit"<<endl;
+                    
+                    do{
+                        cout<<" \n\t Ingresa la opcion deseada: ";
+                        cin>>op;
+                        
+                        switch(op){
+                                case 1: cout<<"\n\t Ingrese un numero: ";
+                                    
+                                    cin>>dato;
+                                    nuNodo(arbol,dato);
+                                
+                                break;
+                            
+                                case 2: cout<<"\n\t Este es el arbol: \n\n";
+                                    
+                                    arbolI(arbol,contador);  
+                                
+                                break;
+                        }
+                        
+                    }
+                    
+                    while(op != 3);
+                }
+                
+                //Crear el nodo.
+                
+                Nodo *crearNodo(int n){
+                
+                    Nodo *nuevo_nodo = new Nodo();
+                    nuevo_nodo->dato = n;
+                    nuevo_nodo->right = NULL;
+                    nuevo_nodo->left = NULL;
+                    
+                    return nuevo_nodo;
+                }
+                
+                //Se inserta un nodo en el arbol
+                
+                void nuNodo(Nodo *&arbol,int n){
+                    if(arbol == NULL){
+                        Nodo *nuevo_nodo = crearNodo(n);
+                        arbol = nuevo_nodo;
+                    }
+                    else{
+                        int vRz = arbol->dato;
+                        if(n < vRz){
+                            nuNodo(arbol->left,n);
+                        }
+                        else{
+                            nuNodo(arbol->right,n);
+                        }
+                    }
+                }
+                
+                            //Estructura del �rbol.
+                            
+                void arbolI(Nodo *arbol,int cont){
+                    if(arbol == NULL){
+                    }
+                        else{
+                        
+                            arbolI(arbol->right, cont+1);
+                            for(int i=0;i<cont;i++){
+                            cout<< "  ";
+                        }
+                    
+                        cout<<arbol->dato<<endl;
+                        arbolI(arbol->left,cont+1);	
+                    }
+                }
+                
+        </textarea>
+    </font>
+        <br><br><button class="button"><a href="/HTML/subPagArboles.html">Ver ejecución </a></button>
+    </div>
+</body>
+<div class="footer">
+    <footer>
+        <br><p align="center"><font color="white" size="4">
+            Lesly Terrazas · Técnico en Infórmatica. <br>
+        </font></p>
+    </footer>
+    </div>
+</html>
